@@ -1,6 +1,6 @@
 require 'sinatra'
 class MyApp  < Sinatra::Base
 get '/' do
-  "Learning Ruby on Heroku"
+erb :index
 end
 end
