@@ -7,6 +7,7 @@ gem 'rack'
 gem "activerecord"
 gem "sinatra-activerecord"
 gem 'pg'
+gem 'mail'
 #gem 'datamapper'
 #gem 'dm-paperclip'
 #gem 'haml'
