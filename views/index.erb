@@ -57,67 +57,33 @@ Skleněná louka ( The twelve, Tibet ) and at the café Anděl ( The garden of t
 
 </div>
 <div class="gallery page top">
-  <div class="container">
-    <div class="well">
-  <h2>Callente</h2>
 
-  <center>
-  <div id="links">
-      <a href="gallery/7.jpg" title="Mona Lisa colombiana" data-gallery>
-          <img src="gallery/thumb/7.jpg" alt="plop">
-      </a>
-      <a href="gallery/8.jpg" title="Mona Lisa colombiana" data-gallery>
-          <img src="gallery/thumb/8.jpg" alt="plop">
-      </a>
-      <a href="gallery/9.jpg" title="Mona Lisa colombiana" data-gallery>
-          <img src="gallery/thumb/9.jpg" alt="plop">
-      </a>
-      <a href="gallery/10.jpg" title="Mona Lisa colombiana" data-gallery>
-          <img src="gallery/thumb/10.jpg" alt="plop">
-      </a>
-      <a href="gallery/11.jpg" title="Mona Lisa colombiana" data-gallery>
-          <img src="gallery/thumb/11.jpg" alt="plop">
-      </a>
-      <a href="gallery/12.jpg" title="Mona Lisa colombiana" data-gallery>
-          <img src="gallery/thumb/12.jpg" alt="plop">
-      </a>    <a href="gallery/12.jpg" title="Mona Lisa colombiana" data-gallery>
-              <img src="gallery/thumb/12.jpg" alt="plop">
-          </a>
-    </div>
-  </center>
-  </div>
-  </div>
-<br><br>
+<%gal=Dir.entries("public/imgz")-[".",".."]
+gal.sort.reverse.each do |gal_name|%>
 <div class="container">
   <div class="well">
-    <h2>Callente</h2>
-<center>
-<div id="links">
-    <a href="gallery/1.jpg" title="Mona Lisa colombiana" data-gallery>
-        <img src="gallery/thumb/1.jpg" alt="plop">
-    </a>
-    <a href="gallery/2.jpg" title="Mona Lisa colombiana" data-gallery>
-        <img src="gallery/thumb/2.jpg" alt="plop">
-    </a>
-    <a href="gallery/3.jpg" title="Mona Lisa colombiana" data-gallery>
-        <img src="gallery/thumb/3.jpg" alt="plop">
-    </a>
-    <a href="gallery/4.jpg" title="Mona Lisa colombiana" data-gallery>
-        <img src="gallery/thumb/4.jpg" alt="plop">
-    </a>
-    <a href="gallery/5.jpg" title="Mona Lisa colombiana" data-gallery>
-        <img src="gallery/thumb/5.jpg" alt="plop">
-    </a>
-    <a href="gallery/6.jpg" title="Mona Lisa colombiana" data-gallery>
-        <img src="gallery/thumb/6.jpg" alt="plop">
-    </a>
-  </div>
+   <h2><%=gal_name%></h2>
+   <center>
+   <div id="links">
+     <%files=Dir.entries("public/imgz/#{gal_name}")-[".",".."]%>
+     <%files.each do |file_name|%>
+     <%=unless File.exist?("public/thumbs/#{file_name}")
+`convert -define jpeg:size=200x200 "public/imgz/#{gal_name}/#{file_name}"  -thumbnail 150x150^ -gravity center -extent 150x150 "public/thumbs/#{file_name}"`
+end%>
+<a href="/imgz/<%=gal_name%>/<%=file_name%>" title="<%=file_name%>" data-gallery>
+      <img src="/thumbs/<%=file_name%>" alt="<%=file_name%>">
+  </a>
+
+
+<%end%>
+</div>
 </center>
 </div>
 </div>
+<br><br>
+<%end%>
+
 </div>
-
-
 
 
 
