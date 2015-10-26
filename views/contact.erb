@@ -78,8 +78,12 @@ $("#email_error").text("We need your mail to contact you back")
 $("#email_error").fadeTo("slow",1)
 return false;
    }
-
-   var dataString = 'name='+ name + '&email=' + email ;
+   if (text == "") {
+   $("#text_error").text("Please do not forget your message")
+   $("#text_error").fadeTo("slow",1)
+   return false;
+   }
+   var dataString = 'name='+ name + '&email=' + email+ '&text=' + text ;
      $.ajax({
        type: "POST",
        url: "/mail",
