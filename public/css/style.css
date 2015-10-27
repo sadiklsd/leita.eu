@@ -109,6 +109,9 @@ h2 {
    color:#09c;
    margin-top: 25px;
  }
+ .error{
+   color:#f00;
+ }
 #custom-bootstrap-menu.navbar-default .navbar-brand {
     color: rgba(55, 90, 127, 1);
 }

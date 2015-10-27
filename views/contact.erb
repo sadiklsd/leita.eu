@@ -17,7 +17,7 @@
     <div class="form-group">
         <label for="ip" class="col-sm-2 control-label">Ip address</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="name" name="ip" value="<%=request.ip%>" >
+            <input type="text" class="form-control" id="ip" name="ip" value="<%=request.ip%>" >
         </div>
     </div>
   </fieldset>
@@ -45,14 +45,16 @@
         </div>
     </div>
     <label class="error" for="message" id="message_error">This field is required.</label>
-
+<%test1=rand(20)%>
+<%test2=rand(20)%>
+<%sol=test1+test2%>
     <div class="form-group">
-        <label for="human" class="col-sm-2 control-label">2 + 3 = ?</label>
+        <label for="human" class="col-sm-2 control-label"><%=test1%> + <%=test2%> = ?</label>
         <div class="col-sm-10">
             <input type="text" class="form-control" id="human" name="human" placeholder="Your Answer">
         </div>
     </div>
-    <label class="error" for="math" id="math_error">This field is required.</label>
+    <label class="error" for="math" id="human_error">This field is required.</label>
 
     <div class="form-group">
         <div class="col-sm-10 col-sm-offset-2">
@@ -77,6 +79,12 @@
     var name = $("input#name").val();
     var email = $("input#email").val();
     var text = $("#text").val();
+    var human = $("#human").val();
+    if (human != "<%=sol%>") {
+     $("#human_error").text("Wrong result")
+ $("#human_error").fadeTo("slow",1)
+ return false;
+    }
    if (name == "") {
     $("#name_error").text("We need your name")
 $("#name_error").fadeTo("slow",1)
