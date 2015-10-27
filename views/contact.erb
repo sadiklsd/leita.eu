@@ -32,7 +32,7 @@
     <div class="form-group">
         <label for="message" class="col-sm-2 control-label">Message</label>
         <div class="col-sm-10">
-            <textarea class="form-control" rows="4" name="message" placeholder="Your message..."></textarea>
+            <textarea class="form-control" rows="4" id="text" name="message" placeholder="Your message..."></textarea>
         </div>
     </div>
     <label class="error" for="message" id="message_error">This field is required.</label>
@@ -68,7 +68,7 @@
     $(".error").css({"opacity":0})
     var name = $("input#name").val();
     var email = $("input#email").val();
-    var text = $("input#text").val();
+    var text = $("#text").val();
    if (name == "") {
     $("#name_error").text("We need your name")
 $("#name_error").fadeTo("slow",1)
