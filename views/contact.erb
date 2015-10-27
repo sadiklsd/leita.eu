@@ -12,6 +12,15 @@
 <div class="well">
 <h2>Contact</h2>
   <form id='my_form' class="form-horizontal"  action="javascript:check();">
+    <fieldset disabled>
+
+    <div class="form-group">
+        <label for="ip" class="col-sm-2 control-label">Ip address</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="name" name="ip" value="<%=request.ip%>" >
+        </div>
+    </div>
+  </fieldset>
 
     <div class="form-group">
         <label for="name" class="col-sm-2 control-label">Name</label>
@@ -61,7 +70,6 @@
 </div>
 
 </div>
-<%=request.ip%>
 <script>
 
   function check() {
