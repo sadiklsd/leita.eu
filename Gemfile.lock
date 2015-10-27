@@ -28,6 +28,8 @@ GEM
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
+    shotgun (0.9.1)
+      rack (>= 1.0)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -50,5 +52,9 @@ DEPENDENCIES
   mail
   pg
   rack
+  shotgun
   sinatra
   sinatra-activerecord
+
+BUNDLED WITH
+   1.10.6

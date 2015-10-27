@@ -1,127 +1,138 @@
 <meta charset="utf-8">
 <title>Leita.eu</title>
-<link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.css" media="screen">
+<link href="https://bootswatch.com/darkly/bootstrap.css" media="screen" rel="stylesheet">
 
-<link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
-<link rel="stylesheet" href="css/bootstrap-image-gallery.css">
-<link rel="stylesheet" href="css/bootstrap-switch.css">
-<link rel="stylesheet" href="css/style.css">
-
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
+<link href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css" rel="stylesheet">
+<link href="css/bootstrap-image-gallery.css" rel="stylesheet">
+<link href="css/bootstrap-switch.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<div class="navbar navbar-default navbar-fixed-top" id="custom-bootstrap-menu" role="navigation">
+  <div class="container">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">Leita.eu</a>
+      <button class="navbar-toggle" data-target=".navbar-menubuilder" data-toggle="collapse" type="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
-    <div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a id="home" class="button" href="#">Home</a></li>
-        <li><a class="button" id="gallery" href="#">Gallery</a></li>
-        <li><a class="button" id="contact" href="#">Contact</a></li>
+    <div class="collapse navbar-collapse navbar-menubuilder">
+      <ul class="nav navbar-nav navbar-left">
+        <li class="active">
+          <a class="button" href="#" id="home">Home</a>
+        </li>
+        <li>
+          <a class="button" href="#" id="gallery">Gallery</a>
+        </li>
+        <li>
+          <a class="button" href="#" id="contact">Contact</a>
+        </li>
+        <input class="gallery page" id="fullscreen-checkbox" name='my-checkbox' type="checkbox">
 
-                    <input class="gallery page" name='my-checkbox' id="fullscreen-checkbox" type="checkbox">
       </ul>
     </div>
   </div>
-</nav>
+</div>
+
 <div class="home page top">
-<div class="well banner">
-<div class="container">
-<div class="title">
-Leita
-</div>
-Blablablablabla
-</div></div>
-<div class="container ">
-<div class="well">
-<h2>home</h2>
-Leita is a young Czech artist living in Spain,<br/>
-Working with oil colors, she is also interested in multimedia technologies.<br/><br/>
-In her childhood  she was amazed by the world of fine art
-and this strong impression also shaped her decision to became a painter.<br/><br/>
-Taking inspiration from great artists as Dali,Bacon,Gauguin etc. unleashed her creativity,<br/>
-allowing her to experiment with her own way of expression.<br/><br/>
-She is fascinated  primarily by human figure and more  by inner human world. <br/>
-Although her motifs in paintings are different ( portraits of musicians ,  elements and rituals
-, wild  life...), in conclusion all of them are capturing  the moments of deep immersion,
-rapture or revelation. These mentioned themes stream trough her work with certain
-tranquility  and timelessness as a mirror of her intimate experiences.<br/><br/>
-Leitá often describes her creative work more as alchemy than painting.<br/> Her canvas
-becomes a melting pot filled with colors, shapes, found photographs, memories and insights,
-all connected in an effective contrast which gives her paintings intensity.<br/><br/>
-In the past she organized three exhibitions in Brno, two of them at
-Skleněná louka ( The twelve, Tibet ) and at the café Anděl ( The garden of the soul ).<br>
-  <span class="see-photo"><a href="#gallery">See the paintings<i class="entypo-right-open-mini"></i></a></span>
-</div>
-</div>
+  <div class="well banner">
+    <div class="container">
+      <div class="title">
+        Leita
+      </div>
+      Blablablablabla
+    </div>
+  </div>
+  <div class="container ">
+    <div class="well">
+      <h2>home</h2>
+      Leita is a young Czech artist living in Spain,<br/>
+      Working with oil colors, she is also interested in multimedia technologies.<br/><br/>
+      In her childhood she was amazed by the world of fine art and this strong impression also shaped her decision to became a painter.<br/><br/>
+      Taking inspiration from great artists as Dali,Bacon,Gauguin etc. unleashed her creativity,<br/>
+      allowing her to experiment with her own way of expression.<br/><br/>
+      She is fascinated primarily by human figure and more by inner human world.
+      <br/>
+      Although her motifs in paintings are different ( portraits of musicians , elements and rituals , wild life...), in conclusion all of them are capturing the moments of deep immersion, rapture or revelation. These mentioned themes stream trough her
+      work with certain tranquility and timelessness as a mirror of her intimate experiences.<br/><br/>
+      Leitá often describes her creative work more as alchemy than painting.<br/>
+      Her canvas becomes a melting pot filled with colors, shapes, found photographs, memories and insights, all connected in an effective contrast which gives her paintings intensity.<br/><br/>
+      In the past she organized three exhibitions in Brno, two of them at Skleněná louka ( The twelve, Tibet ) and at the café Anděl ( The garden of the soul ).<br>
+      <span class="see-photo">
+        <a href="#gallery">See the paintings
+          <i class="entypo-right-open-mini"></i>
+        </a>
+      </span>
+    </div>
+  </div>
 
 </div>
 <div class="gallery page top">
-
-<%gal=Dir.entries("public/imgz")-[".",".."]
+  <br>
+  <%gal=Dir.entries("public/imgz")-[".",".."]
 gal.sort.reverse.each do |gal_name|%>
-<div class="container">
-  <div class="well">
-   <h2><%=gal_name%></h2>
-   <center>
-   <div id="links">
-     <%files=Dir.entries("public/imgz/#{gal_name}")-[".",".."]%>
-     <%files.each do |file_name|%>
-     <%=unless File.exist?("public/thumbs/#{file_name}")
+  <div class="container">
+    <div class="well">
+      <h2><%=gal_name%></h2>
+        <div id="links">
+          <%files=Dir.entries("public/imgz/#{gal_name}")-[".",".."]%>
+          <%files.each do |file_name|%>
+          <%=unless File.exist?("public/thumbs/#{file_name}")
 `convert -define jpeg:size=200x200 "public/imgz/#{gal_name}/#{file_name}"  -thumbnail 150x150^ -gravity center -extent 150x150 "public/thumbs/#{file_name}"`
 end%>
-<a href="/imgz/<%=gal_name%>/<%=file_name%>" title="<%=file_name%>" data-gallery>
-      <img src="/thumbs/<%=file_name%>" alt="<%=file_name%>">
-  </a>
+          <a data-description="<%=file_name[/\((.*?)\)/,1]%>" data-gallery href="/imgz/<%=gal_name%>/<%=file_name%>" title="<%=file_name[/^(.*?)\(/,1]%>">
+            <img alt="<%=file_name[/\((.*?)\)/,1]%>" src="/thumbs/<%=file_name%>">
+          </a>
 
-
-<%end%>
-</div>
-</center>
-</div>
-</div>
-<br><br>
-<%end%>
-
-</div>
-
-
-
-<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-<div id="blueimp-gallery" class="blueimp-gallery">
-    <!-- The container for the modal slides -->
-    <div class="slides"></div>
-    <!-- Controls for the borderless lightbox -->
-    <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
-    <ol class="indicator"></ol>
-    <!-- The modal dialog, which will be used to wrap the lightbox content -->
-    <div class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title"></h4>
-                </div>
-                <div class="modal-body next"></div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default pull-left prev">
-                        <i class="glyphicon glyphicon-chevron-left"></i>
-                        Previous
-                    </button>
-                    <button type="button" class="btn btn-primary next">
-                        Next
-                        <i class="glyphicon glyphicon-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
+          <%end%>
         </div>
     </div>
+  </div>
+  <br>
+  <%end%>
 </div>
 
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+  <!-- The container for the modal slides -->
+  <div class="slides"></div>
+  <!-- Controls for the borderless lightbox -->
+  <h3 class="title"></h3>
+  <p class="description mod"></p>
+
+    <a class="prev">‹</a>
+  <a class="next">›</a>
+  <a class="close">×</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
+  <!-- The modal dialog, which will be used to wrap the lightbox content -->
+  <div class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" aria-hidden="true">&times;</button>
+          <h4 class="modal-title"></h4>
+          <p class="description full"></p>
+
+        </div>
+        <div class="modal-body next"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default pull-left prev">
+            <i class="glyphicon glyphicon-chevron-left"></i> Previous
+          </button>
+          <button type="button" class="btn btn-primary next">
+            Next
+            <i class="glyphicon glyphicon-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -129,39 +140,52 @@ end%>
 <script src="js/bootstrap-image-gallery.js"></script>
 <script src="js/bootstrap-switch.js"></script>
 
+
+
 <script type="text/javascript">
-
-$( ".button" ).click(function() {
-test=$(this).attr('id');
-active=$(this).parent().attr('class');
-if ( active != "active" ){
-$(".page").hide()
-$(".page").css({"opacity":"0"});
-
-$("."+test).show().animate({"opacity":"1"},"slow");
-$(".button").parent().removeClass( "active" );
-$("#"+test).parent().addClass("active")
-}
+$('#blueimp-gallery').on('slide', function (event, index, slide) {
+        test=$('#links a').eq(index).data("description")
+        $(this).find('.description').text(test)
 });
+  $(".button")
+    .click(function () {
+      test = $(this).attr('id');
+      active = $(this).parent()
+        .attr('class');
+      if (active != "active") {
+        $(".page").hide()
+        $(".page").css({
+          "opacity": "0"
+        });
 
-$("#fullscreen-checkbox").bootstrapSwitch(
-  {"size":"small",
-  "labelText":"FULLSCREEN",
-"onColor":"info",
-"offColor":"primary",
-"baseClass":"gallery page bootstrap-switch"
-}
-);
-$('input[name="my-checkbox"]').on('switchChange.bootstrapSwitch', function(event, state) {
-  var borderless = $(this).is(':checked');
-  $('#blueimp-gallery').data('useBootstrapModal', !borderless);
-  $('#blueimp-gallery').toggleClass('blueimp-gallery-controls', borderless);
-  $('#blueimp-gallery').data('fullScreen', $(this).is(':checked'));
+        $("." + test).show()
+          .animate({
+            "opacity": "1"
+          }, "slow");
+        $(".button").parent()
+          .removeClass("active");
+        $("#" + test).parent()
+          .addClass("active")
+      }
+    });
 
-});
+  $("#fullscreen-checkbox").bootstrapSwitch({
+    "size": "small",
+    "labelText": "FULLSCREEN",
+    "onColor": "info",
+    "offColor": "primary",
+    "baseClass": "gallery page bootstrap-switch"
+  });
+  $('input[name="my-checkbox"]')
+    .on('switchChange.bootstrapSwitch', function (event, state) {
+      var borderless = $(this).is(':checked');
+      $('#blueimp-gallery').data('useBootstrapModal', !borderless);
+      $('#blueimp-gallery').toggleClass('blueimp-gallery-controls', borderless);
+      $('#blueimp-gallery').data('fullScreen', $(this).is(':checked'));
+
+    });
 
 
-</script>
-<script type="text/javascript">
+
 
 </script>

@@ -1,127 +1,159 @@
-
-@font-face{
-    font-family:'sweet_home_oklahomaregular';
-    src:url('fonts/sweet_home_oklahoma-webfont.eot');src:url('fonts/sweet_home_oklahoma-webfont.eot?#iefix') format('embedded-opentype'),
-url('fonts/sweet_home_oklahoma-webfont.woff') format('woff'),
-url('fonts/sweet_home_oklahoma-webfont.ttf') format('truetype'),
-url('fonts/sweet_home_oklahoma-webfont.svg#sweet_home_oklahomaregular') format('svg');
-font-weight:400;
-font-style:normal
-}
-
 @font-face {
-    font-family: 'traveling__typewriterregular';
-    src: url('fonts/travelingtypewriter-webfont.eot');
-    src: url('fonts/travelingtypewriter-webfont.eot?#iefix') format('embedded-opentype'),
-        url('fonts/travelingtypewriter-webfont.woff') format('woff'),
-        url('fonts/travelingtypewriter-webfont.ttf') format('truetype'),
-        url('fonts/travelingtypewriter-webfont.svg#traveling__typewriterregular') format('svg');
-
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'sweet_home_oklahomaregular';
+  src: url('fonts/sweet_home_oklahoma-webfont.eot');
+  src: url('fonts/sweet_home_oklahoma-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/sweet_home_oklahoma-webfont.woff') format('woff'), url('fonts/sweet_home_oklahoma-webfont.ttf') format('truetype'), url('fonts/sweet_home_oklahoma-webfont.svg#sweet_home_oklahomaregular') format('svg');
+  font-weight: 400;
+  font-style: normal
+}
+@font-face {
+  font-family: 'traveling__typewriterregular';
+  src: url('fonts/travelingtypewriter-webfont.eot');
+  src: url('fonts/travelingtypewriter-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/travelingtypewriter-webfont.woff') format('woff'), url('fonts/travelingtypewriter-webfont.ttf') format('truetype'), url('fonts/travelingtypewriter-webfont.svg#traveling__typewriterregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.gallery{
+  font-family: 'traveling__typewriterregular' !important;
 
 }
-.ntitle{
-
-font-family:'traveling__typewriterregular';
-font-family:'sweet_home_oklahomaregular' !important;
-font-size: 250px;
-color: #000;
-text-shadow: 2px 2px 0px #09c, 5px 5px 0px #000, 25px 25px 10px #035;
-margin-top: -50px;
--webkit-filter: none;
-
+.navbar-brand {
+  font-family: 'sweet_home_oklahomaregular' !important;
+  font-size: 100px;
+  margin-top: -40px;
 }
-
-.banner{
-	background: url('../banner.jpg') center;
-
-	height: 300px;
-	width: 100%;
-	/*-webkit-filter: opacity(90%) blur(1px) saturate(1.2);*/
-
-
+.banner {
+  background: url('../banner.jpg') center;
+  height: 300px;
+  width: 100%;
+  /*-webkit-filter: opacity(90%) blur(1px) saturate(1.2);*/
 }
-
-
-.gallery,.contact{
-	display:none;
-	opacity:0;
+.gallery, .contact {
+  display: none;
+  opacity: 0;
 }
-a img{
-border: 2px solid #ccc !important;
-border-radius: 150px;
-opacity:.5;
--webkit-transition: opacity 1s ease-in-out;
- -moz-transition: opacity 1s ease-in-out;
- -ms-transition: opacity 1s ease-in-out;
- -o-transition: opacity 1s ease-in-out;
- transition: opacity 1s ease-in-out;
-margin: 10px;
+a img {
+  border: 2px solid #ccc !important;
+  border-radius: 150px;
+  opacity: .5;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  margin: 10px;
 }
-a img:hover{
-
-	opacity:1;
-	-webkit-transition: opacity .3s ease-in-out;
-   -moz-transition: opacity .3s ease-in-out;
-   -ms-transition: opacity .3s ease-in-out;
-   -o-transition: opacity .3s ease-in-out;
-   transition: opacity .3s ease-in-out;
-
-
-
-
+a img:hover {
+  opacity: 1;
+  -webkit-transition: opacity .3s ease-in-out;
+  -moz-transition: opacity .3s ease-in-out;
+  -ms-transition: opacity .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
 }
-.links{
-	height: 300px !important;
-	overflow: scroll;
+.links {
+  height: 300px !important;
+  overflow: scroll;
 }
-.left{
-	margin: 0;
-	padding: 0;
-border-right: 1px solid #fff;
-height: 100%;
-position: absolute;
-	left: 0;
-	transition: background .3s ease-in-out;
-
+.left {
+  margin: 0;
+  padding: 0;
+  border-right: 1px solid #fff;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  transition: background .3s ease-in-out;
 }
-.left p{
--webkit-transform: rotate(-90deg);
-text-align: left;
-font-size: 20px;
-text-transform: uppercase;
-margin-top: 70px;
-
+.left p {
+  -webkit-transform: rotate(-90deg);
+  text-align: left;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-top: 70px;
 }
-
 .well:hover > h2 {
-	background: #057;
-	transition: background 1s ease-in-out;
-
+  background: #057;
+  transition: background 1s ease-in-out;
 }
-h2{
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-
-	margin: 0;
-	padding: 10px;
-	text-align: center;
-	text-transform: uppercase;
-	border-bottom: 1px solid #777;
-	margin-bottom: 10px;
+h2 {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: 1px solid #777;
+  margin-bottom: 10px;
 }
-.navbar{
-	position: fixed;
-	width: 100%;
-	z-index: 9999;
-	top:0;
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  top: 0;
+  border-bottom:  rgba(55, 90, 127, 1) 2px solid !important;
 }
-.top{
-	margin-top: 60px;
+.blueimp-gallery > .description {
+  position: absolute;
+  top: 30px;
+  left: 15px;
+  color: #fff;
+  display: none;
 }
-body h1{
+.blueimp-gallery-controls > .description {
+  display: block;
+}
+ .full.description{
+   color:#09c;
+   text-align: right !important;
+ }
+ .mod.description{
+   color:#09c;
+   margin-top: 25px;
+ }
+#custom-bootstrap-menu.navbar-default .navbar-brand {
+    color: rgba(55, 90, 127, 1);
+}
+#custom-bootstrap-menu.navbar-default {
+    font-size: 14px;
+    background-color: rgba(34, 34, 34, 1);
+    border-bottom-width: 0px;
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
+    color: rgba(204, 204, 204, 1);
+    background-color: rgba(55, 90, 127, 1);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
+    color: rgba(204, 204, 204, 1);
+    background-color: rgba(48, 48, 48, 1);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(204, 204, 204, 1);
+    background-color: rgba(48, 48, 48, 1);
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle {
+    border-color: #303030;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
+    background-color: #303030;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
+    background-color: #303030;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #222222;
+}
 
-	font-family: Signika !important;
 
+.navbar {
+  color: #f00 !important;
+}
+.top {
+  margin-top: 60px;
+}
+body h1 {
+  font-family: Signika !important;
 }

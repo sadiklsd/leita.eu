@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby '2.1.2'
+ruby '2.1.5'
 
 gem 'sinatra'
 gem 'foreman'
@@ -8,6 +8,7 @@ gem "activerecord"
 gem "sinatra-activerecord"
 gem 'pg'
 gem 'mail'
+gem 'shotgun'
 #gem 'datamapper'
 #gem 'dm-paperclip'
 #gem 'haml'
