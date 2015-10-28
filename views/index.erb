@@ -149,6 +149,8 @@ $('#blueimp-gallery').on('slide', function (event, index, slide) {
 });
   $(".button")
     .click(function () {
+      event.preventDefault();
+
       test = $(this).attr('id');
       active = $(this).parent()
         .attr('class');
