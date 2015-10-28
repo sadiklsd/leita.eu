@@ -91,18 +91,10 @@
 
 	height: 300px;
 	width: 100%;
-	-webkit-filter: opacity(90%) blur(1px) saturate(1.2);
 
 
 }
-.title h1{
-	font-size: 90px;
-}
-.title{
-	font-size: 40px;
-	color: #000;
-	text-shadow: 2px 2px 0px #09c, 5px 5px 0px #000, 25px 25px 10px #035;
-}
+
 
 .gallery,.contact{
 	display:none;
@@ -128,32 +120,10 @@ a img:hover{
    -o-transition: opacity .3s ease-in-out;
    transition: opacity .3s ease-in-out;
 
-
-
-
 }
-.links{
-	height: 300px !important;
-	overflow: scroll;
-}
-.left{
-	margin: 0;
-	padding: 0;
-border-right: 1px solid #fff;
-height: 100%;
-position: absolute;
-	left: 0;
-	transition: background .3s ease-in-out;
 
-}
-.left p{
--webkit-transform: rotate(-90deg);
-text-align: left;
-font-size: 20px;
-text-transform: uppercase;
-margin-top: 70px;
 
-}
+
 
 .well:hover > h2 {
 	background: #057;

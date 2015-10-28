@@ -16,8 +16,38 @@
   font-family: 'traveling__typewriterregular' !important;
 
 }
+.well h2{
+  font-family: 'traveling__typewriterregular' !important;
+
+}
+
+.navbar-header{
+  font-family: 'sweet_home_oklahomaregular';
+
+}
+.navbar-nav{
+  font-family: 'traveling__typewriterregular' !important;
+
+}
+
+.title{
+  text-align: right;
+  font-family: 'sweet_home_oklahomaregular';
+font-size: 300px;
+margin-top: -120px;
+color:#eee;
+text-shadow:0 0 1px #000, 1px 1px 10px #057;
+
+}
+.desc{
+  text-align: right;
+  margin-top: -120px;
+color: #ccc;
+font-family: Signika;
+font-size: 24;
+text-shadow:0 0 1px #09c, 0 0 10px #000
+}
 .navbar-brand {
-  font-family: 'sweet_home_oklahomaregular' !important;
   font-size: 100px;
   margin-top: -40px;
 }
@@ -25,11 +55,17 @@
   background: url('../banner.jpg') center;
   height: 300px;
   width: 100%;
+
   /*-webkit-filter: opacity(90%) blur(1px) saturate(1.2);*/
 }
 .gallery, .contact {
   display: none;
   opacity: 0;
+}
+.banner.title{
+  font-family: 'traveling__typewriterregular';
+
+  font-size: 40px;
 }
 a img {
   border: 2px solid #ccc !important;
@@ -50,9 +86,11 @@ a img:hover {
   -o-transition: opacity .3s ease-in-out;
   transition: opacity .3s ease-in-out;
 }
-.links {
-  height: 300px !important;
-  overflow: scroll;
+.presentation{
+  margin: 10px;
+  padding: 10px;
+  font-family: Signika;
+  color: #ccc;
 }
 .left {
   margin: 0;
@@ -151,12 +189,7 @@ h2 {
 }
 
 
-.navbar {
-  color: #f00 !important;
-}
+
 .top {
   margin-top: 60px;
-}
-body h1 {
-  font-family: Signika !important;
 }

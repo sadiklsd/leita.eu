@@ -41,13 +41,17 @@
       <div class="title">
         Leita
       </div>
-      Blablablablabla
-    </div>
+      <div class="desc">
+
+Art  </div>
   </div>
+</div>
   <div class="container ">
     <div class="well">
       <h2>home</h2>
-      Leita is a young Czech artist living in Spain,<br/>
+        <img width="300px" style="float:right;border:#ccc 1px solid;border-radius:30000px" src="/profile.jpg"/>
+        <div class="presentation">
+        Leita is a young Czech artist living in Spain,<br/>
       Working with oil colors, she is also interested in multimedia technologies.<br/><br/>
       In her childhood she was amazed by the world of fine art and this strong impression also shaped her decision to became a painter.<br/><br/>
       Taking inspiration from great artists as Dali,Bacon,Gauguin etc. unleashed her creativity,<br/>
@@ -59,12 +63,8 @@
       Leitá often describes her creative work more as alchemy than painting.<br/>
       Her canvas becomes a melting pot filled with colors, shapes, found photographs, memories and insights, all connected in an effective contrast which gives her paintings intensity.<br/><br/>
       In the past she organized three exhibitions in Brno, two of them at Skleněná louka ( The twelve, Tibet ) and at the café Anděl ( The garden of the soul ).<br>
-      <span class="see-photo">
-        <a href="#gallery">See the paintings
-          <i class="entypo-right-open-mini"></i>
-        </a>
-      </span>
-    </div>
+      <br><center>  <a class="button btn btn-primary btn-xs" href="#" id="gallery">See the paintings</center></a>
+    </div></div>
   </div>
 
 </div>
@@ -75,7 +75,8 @@ gal.sort.reverse.each do |gal_name|%>
   <div class="container">
     <div class="well">
       <h2><%=gal_name%></h2>
-        <div id="links">
+      <div id="links">
+        <div class="links">
           <%files=Dir.entries("public/imgz/#{gal_name}")-[".",".."]%>
           <%files.each do |file_name|%>
           <%=unless File.exist?("public/thumbs/#{file_name}")
@@ -87,6 +88,7 @@ end%>
 
           <%end%>
         </div>
+      </div>
     </div>
   </div>
   <br>
