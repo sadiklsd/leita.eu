@@ -150,7 +150,7 @@ $('#blueimp-gallery').on('slide', function (event, index, slide) {
         $(this).find('.description').text(test)
 });
   $(".button")
-    .click(function () {
+    .click(function (event) {
       event.preventDefault();
 
       test = $(this).attr('id');
