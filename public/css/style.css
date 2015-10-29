@@ -18,7 +18,8 @@
 }
 .well h2{
   font-family: 'traveling__typewriterregular' !important;
-
+  font-weight: bold;
+text-shadow: 5px 5px 0 #035;
 }
 
 .navbar-header{
@@ -27,7 +28,7 @@
 }
 .navbar-nav{
   font-family: 'traveling__typewriterregular' !important;
-
+font-weight: bold;
 }
 
 .title{
@@ -52,7 +53,7 @@ text-shadow:0 0 1px #09c, 0 0 10px #000
   margin-top: -40px;
 }
 .banner {
-  background: url('../banner.jpg') center;
+  background: url('../banner.jpg') center no-repeat;
   height: 300px;
   width: 100%;
 

@@ -52,6 +52,11 @@
 .blueimp-gallery .modal-body .video-playing a {
  	display: none;
 }
+.input-group-addon{
+ background-color: rgb(50, 118, 177);
+}
+
+
 .blueimp-gallery .modal-body .video-content a {
 	cursor: pointer;
 }

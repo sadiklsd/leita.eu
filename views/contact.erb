@@ -1,119 +1,154 @@
-
-
 <style media="screen">
-.error{
-  opacity: 0;
-}
+  .error {
+    opacity: 0;
+  }
 </style>
 
 <div class="contact page top">
-<div class="container ">
+  <div class="container ">
 
-<div class="well">
-<h2>Contact</h2>
-  <form id='my_form' class="form-horizontal"  action="javascript:check();">
-    <fieldset disabled>
+    <div class="well">
+      <h2>Contact</h2>
+      <form action="javascript:check();" class="form-horizontal" id='my_form'>
+        <fieldset disabled>
 
-    <div class="form-group">
-        <label for="ip" class="col-sm-2 control-label">Ip address</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="ip" name="ip" value="<%=request.ip%>" >
+          <div class="form-group">
+            <label class="col-sm-2 control-label" for="ip">Ip address</label>
+            <div class="col-sm-10">
+              <div class="input-group">
+
+                <div class="input-group-addon">
+                  <span aria-hidden="true" class="glyphicon glyphicon-signal"></span>
+                </div>
+
+                <input class="form-control" id="ip" name="ip" type="text" value="<%=request.ip%>">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <br>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="name">Name</label>
+          <div class="col-sm-10">
+            <div class="input-group">
+              <div class="input-group-addon">
+                <span aria-hidden="true" class="glyphicon glyphicon-user"></span>
+              </div>
+              <input class="form-control" id="name" name="name" placeholder="First & Last Name" type="text">
+            </div>
+          </div>
         </div>
-    </div>
-  </fieldset>
-<br>
-    <div class="form-group">
-        <label for="name" class="col-sm-2 control-label">Name</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name" >
+        <label class="error" for="name" id="name_error">This field is required.</label>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="email">Email</label>
+          <div class="col-sm-10">
+            <div class="input-group">
+
+              <div class="input-group-addon">
+                <span aria-hidden="true" class="glyphicon glyphicon-envelope"></span>
+              </div>
+
+              <input class="form-control" id="email" name="email" placeholder="example@domain.com" type="email">
+            </div>
+          </div>
         </div>
-    </div>
-    <label class="error" for="name" id="name_error">This field is required.</label>
+        <label class="error" for="email" id="email_error">This field is required.</label>
 
-    <div class="form-group">
-        <label for="email" class="col-sm-2 control-label">Email</label>
-        <div class="col-sm-10">
-            <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com">
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="message">Message</label>
+          <div class="col-sm-10">
+            <div class="input-group">
+
+              <div class="input-group-addon">
+                <span aria-hidden="true" class="glyphicon glyphicon-pencil"></span>
+              </div>
+              <textarea class="form-control" id="text" name="message" placeholder="Your message..." rows="4"></textarea>
+            </div>
+          </div>
         </div>
-    </div>
-    <label class="error" for="email" id="email_error">This field is required.</label>
 
-    <div class="form-group">
-        <label for="message" class="col-sm-2 control-label">Message</label>
-        <div class="col-sm-10">
-            <textarea class="form-control" rows="4" id="text" name="message" placeholder="Your message..."></textarea>
+        <label class="error" for="message" id="message_error">This field is required.</label>
+        <%test1=rand(20)%>
+        <%test2=rand(20)%>
+        <%sol=test1+test2%>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="human"><%=test1%>
+            +
+            <%=test2%>
+            = ?</label>
+          <div class="col-sm-10">
+            <div class="input-group">
+
+              <div class="input-group-addon">
+                <span aria-hidden="true" class="glyphicon glyphicon-plus"></span>
+              </div>
+              <input class="form-control" id="human" name="human" placeholder="Your Answer" type="text">
+            </div>
+          </div>
         </div>
+        <label class="error" for="math" id="human_error">This field is required.</label>
+
+        <div class="form-group">
+          <div class="col-sm-10 col-sm-offset-2">
+
+            <div class="input-group">
+
+              <input class="btn btn-primary" id="submit" name="submit" type="submit" value="Send">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-10 col-sm-offset-2">
+              <! Will be used to display an alert to the user>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="message"></div>
     </div>
-    <label class="error" for="message" id="message_error">This field is required.</label>
-<%test1=rand(20)%>
-<%test2=rand(20)%>
-<%sol=test1+test2%>
-    <div class="form-group">
-        <label for="human" class="col-sm-2 control-label"><%=test1%> + <%=test2%> = ?</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="human" name="human" placeholder="Your Answer">
-        </div>
-    </div>
-    <label class="error" for="math" id="human_error">This field is required.</label>
 
-    <div class="form-group">
-        <div class="col-sm-10 col-sm-offset-2">
-            <input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary">
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-sm-10 col-sm-offset-2">
-            <! Will be used to display an alert to the user>
-        </div>
-    </div>
-</form>
-</div>
-<div id="message"></div>
-</div>
+  </div>
+  <script>
 
-</div>
-<script>
+    function check() {
+      $(".error").css({
+        "opacity": 0
+      })
+      var name = $("input#name").val();
+      var email = $("input#email").val();
+      var text = $("#text").val();
+      var human = $("#human").val();
+      if (human != "<%=sol%>") {
+        $("#human_error").text("Wrong result")
+        $("#human_error").fadeTo("slow", 1)
+        return false;
+      }
+      if (name == "") {
+        $("#name_error").text("We need your name")
+        $("#name_error").fadeTo("slow", 1)
+        return false;
+      }
+      if (email == "") {
+        $("#email_error").text("We need your mail to contact you back")
+        $("#email_error").fadeTo("slow", 1)
+        return false;
+      }
+      if (text == "") {
+        $("#text_error").text("Please do not forget your message")
+        $("#text_error").fadeTo("slow", 1)
+        return false;
+      }
+      var dataString = 'name=' + name + '&email=' + email + '&text=' + text;
+      $.ajax({
+        type: "POST",
+        url: "/mail",
+        data: dataString,
+        success: function () {
+        //  $('#message').html("message sent");
+        $('#submit').prop('disabled', true).val("Sent");
 
-  function check() {
-    $(".error").css({"opacity":0})
-    var name = $("input#name").val();
-    var email = $("input#email").val();
-    var text = $("#text").val();
-    var human = $("#human").val();
-    if (human != "<%=sol%>") {
-     $("#human_error").text("Wrong result")
- $("#human_error").fadeTo("slow",1)
- return false;
-    }
-   if (name == "") {
-    $("#name_error").text("We need your name")
-$("#name_error").fadeTo("slow",1)
-return false;
-   }
-   if (email == "") {
-$("#email_error").text("We need your mail to contact you back")
-$("#email_error").fadeTo("slow",1)
-return false;
-   }
-   if (text == "") {
-   $("#text_error").text("Please do not forget your message")
-   $("#text_error").fadeTo("slow",1)
-   return false;
-   }
-   var dataString = 'name='+ name + '&email=' + email+ '&text=' + text ;
-     $.ajax({
-       type: "POST",
-       url: "/mail",
-       data: dataString,
-       success: function() {
-         $('#message').html("message sent");
-       }
-     });
-     return false;
- };
-
-
-
-
-
-</script>
+        }
+      });
+      return false;
+    };
+  </script>
