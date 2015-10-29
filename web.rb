@@ -15,13 +15,19 @@ class MyApp < Sinatra::Base
     erb "#{File.read('views/index.erb')} #{File.read('views/contact.erb')}"
   end
   post '/mail' do
-    name = params[:name]
-    email = params[:email]
-    text = params[:text]
+    content_type :json
+
+    {"params" => params}
+    hash=JSON.parse("{#{params.to_s.delete("\\\\{}").gsub('""','"')[/^(.*),"human"/,1]}}")
+    ip=hash["ip"]
+    name=hash["name"]
+    email=hash["email"]
+    text=hash["message"]
+
     mail = Mail.new do
       to 'nicolas.roitero@gmail.com'
       from 'Laita-web@leita.eu'
-      subject "New mail from #{name}"
+      subject "New mail from #{name} / ip: #{ip}"
       content_type 'text/html; charset=UTF-8'
       body "name: #{name}<br>email: <a href=\"mailto:#{email}\">#{email}</a><br>
       text: #{text}"
