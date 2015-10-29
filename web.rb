@@ -28,6 +28,6 @@ class MyApp < Sinatra::Base
     Pony.mail :to =>'nicolas.roitero@gmail.com',
     :from => 'contact@leita.eu',
     :subject => "New mail from #{name} / ip: #{ip}",
-    :body => "name: #{name}<br>email: <a href=\"mailto:#{email}\">#{email}</a><br>text: #{text}"
+    :html_body => "name: #{name}<br>email: <a href=\"mailto:#{email}\">#{email}</a><br>text: #{text}"
   end
 end
