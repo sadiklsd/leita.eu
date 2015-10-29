@@ -18,7 +18,7 @@ class MyApp < Sinatra::Base
     content_type :json
 
     {"params" => params}
-    hash=JSON.parse("{#{params.to_s.delete("\\\\{}").gsub('""','"')[/^(.*),"human"/,1]}}")
+    hash=JSON.parse("{#{params.to_s.gsub("\n","<br>").delete("\\\\{}").gsub('""','"')[/^(.*),"human"/,1]}}")
     ip=hash["ip"]
     name=hash["name"]
     email=hash["email"]
