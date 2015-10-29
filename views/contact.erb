@@ -94,14 +94,11 @@
   $('form')
   .bootstrap3Validate(function (e, data) {
     e.preventDefault();
-
-    mail = JSON.stringify(data)
-    console.log(data);
-
     $.ajax({
       type: "POST",
       url: "/mail",
-      data: mail,
+      dataType: 'json',
+      data: data,
       success: function () {
         $('#submit').prop('disabled', true)
         .val("Message sent")

@@ -16,14 +16,12 @@ class MyApp < Sinatra::Base
   end
   post '/mail' do
     content_type :json
-
-    {"params" => params}
-    hash=JSON.parse("{#{params.to_s.gsub("\n","<br>").delete("\\\\{}").gsub('""','"')[/^(.*),"human"/,1]}}")
-    ip=hash["ip"]
-    name=hash["name"]
-    email=hash["email"]
-    text=hash["message"]
-
+    params
+    ip=params["ip"]
+    name=params["name"]
+    email=params["email"]
+    text=params["message"].gsub("\n","<br>")
+puts params
 
     Pony.mail :to =>'nicolas.roitero@gmail.com',
     :from => 'contact@leita.eu',
