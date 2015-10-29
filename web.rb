@@ -1,6 +1,6 @@
 require 'sinatra'
 require 'sinatra/activerecord'
-require 'mail'
+require 'pony'
 db = URI.parse('postgres://rccbbtlniowhqb:ArygKC-v7LpmIYDYOwSZ0cdCdk@ec2-54-204-15-48.compute-1.amazonaws.com:5432/dcd604ki6e6j1k')
 ActiveRecord::Base.establish_connection(
 adapter: db.scheme == 'postgres' ? 'postgresql' : db.scheme,
