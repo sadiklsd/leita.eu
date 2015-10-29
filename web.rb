@@ -24,16 +24,10 @@ class MyApp < Sinatra::Base
     email=hash["email"]
     text=hash["message"]
 
-    mail = Mail.new do
-      to 'nicolas.roitero@gmail.com'
-      from 'Laita-web@leita.eu'
-      subject "New mail from #{name} / ip: #{ip}"
-      content_type 'text/html; charset=UTF-8'
-      body "name: #{name}<br>email: <a href=\"mailto:#{email}\">#{email}</a><br>
-      text: #{text}"
-    end
-    mail.delivery_method :sendmail
-    mail.deliver
 
+    Pony.mail :to =>'nicolas.roitero@gmail.com',
+    :from => 'contact@leita.eu',
+    :subject => "New mail from #{name} / ip: #{ip}",
+    :body => "name: #{name}<br>email: <a href=\"mailto:#{email}\">#{email}</a><br>text: #{text}"
   end
 end

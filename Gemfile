@@ -7,9 +7,10 @@ gem 'rack'
 gem "activerecord"
 gem "sinatra-activerecord"
 gem 'pg'
-gem 'mail'
+#gem 'mail'
 gem 'shotgun'
 gem 'thin'
+gem 'pony'
 #gem 'datamapper'
 #gem 'dm-paperclip'
 #gem 'haml'

@@ -27,6 +27,8 @@ GEM
     mime-types (2.6.2)
     minitest (5.8.1)
     pg (0.18.3)
+    pony (1.11)
+      mail (>= 2.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -55,8 +57,8 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   foreman
-  mail
   pg
+  pony
   rack
   shotgun
   sinatra
