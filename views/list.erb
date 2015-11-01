@@ -1,0 +1,83 @@
+<link href="https://bootswatch.com/darkly/bootstrap.css" media="screen" rel="stylesheet">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<link href="http://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+
+<style>
+td {
+   vertical-align: middle!important;
+}
+.btn-file {
+   position: relative;
+   overflow: hidden;
+}
+.btn-file input[type=file] {
+   position: absolute;
+   top: 0;
+   right: 0;
+   min-width: 100%;
+   min-height: 100%;
+   font-size: 100px;
+   text-align: right;
+   filter:alpha(opacity=0);
+   opacity: 0;
+   outline: none;
+   background: white;
+   cursor: inherit;
+   display: block;
+}
+</style>
+<div class="container">
+   <form enctype='multipart/form-data' method="post" action="/upload">
+      <div class="uploads">
+
+         <span class="btn btn-default btn-file">
+            Browse
+            <input class="file btn  btn-file" name='myfile' type='file'/>
+
+         </span>
+         <input class="btn btn-primary" type='submit' value='Upload!'/>
+
+      </div>
+   </form>
+   <table class="table table-bordered table-hover">
+      <%=lines%>
+
+   </table>
+   <%=lines2%>
+
+</div>
+
+<script>
+$(".update").click(function() {
+  event.preventDefault();
+file=$(this).closest('tr').data("file")
+});
+$('.editable').editable({
+  mode: 'popup',
+  type: 'text',
+  pk: 1,
+  title: 'Enter custom version',
+  onblur: 'ignore',
+  success: function(response, newValue) {
+  /*  folder=$(this).closest('tr').attr("id")
+    var regExp = /^([^)]+)\+/;
+  new_folder=regExp.exec(folder);
+  new_folder=new_folder[1]+"+"+newValue
+  console.log(new_folder)
+
+  $('#'+folder).attr("id",new_folder)
+$(this).closest('tr').attr("id",new_folder)
+var dataString='folder='+folder+'&version='+newValue+'&id=';
+console.log(dataString)
+
+    $.ajax({
+      type: "GET",
+      url: "/Deployer/change",
+      data: dataString
+       });
+*/}
+});
+
+</script>
