@@ -36,24 +36,26 @@ font-weight: bold;
   font-family: 'sweet_home_oklahomaregular';
 font-size: 300px;
 margin-top: -120px;
-color:#eee;
+color:#000;
 text-shadow:0 0 1px #000, 1px 1px 10px #057;
 
 }
 .desc{
   text-align: right;
   margin-top: -120px;
-color: #ccc;
+color: #000;
 font-family: Signika;
 font-size: 24;
-text-shadow:0 0 1px #09c, 0 0 10px #000
+text-shadow:0 0 1px #09c, 0 0 10px #000;
+
 }
 .navbar-brand {
   font-size: 100px;
   margin-top: -40px;
 }
 .banner {
-  background: url('../banner.jpg') center no-repeat;
+  background: url('../imgz/2015/Remember ( 70 x 50 cm,acrylic on canvas).JPG') center -850px no-repeat;
+  background-size:cover;
   height: 300px;
   width: 100%;
 
@@ -65,8 +67,8 @@ text-shadow:0 0 1px #09c, 0 0 10px #000
 }
 .banner.title{
   font-family: 'traveling__typewriterregular';
-
   font-size: 40px;
+margin-left: -200px;
 }
 a img {
   border: 2px solid #ccc !important;
